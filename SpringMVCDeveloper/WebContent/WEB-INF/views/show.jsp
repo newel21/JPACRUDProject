@@ -4,17 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Film Details</title>
+<title>Developer Details</title>
 </head>
 <body>
 	<form action="home.do">
 		<input type="submit" value="Home" />
 	</form>
 	<div>
-		<h4><strong>Name: </strong>${film.title}</h4>
-		<p><strong>Release Year: </strong>${film.releaseYear}</p>
-		<p><strong>Description: </strong>${film.description}</p>
-		<p><strong>Length: </strong>${film.length}</p>
+		<h4><strong>Name: </strong>${dev.firstName}</h4>
 	</div>
 </body>
 </html>

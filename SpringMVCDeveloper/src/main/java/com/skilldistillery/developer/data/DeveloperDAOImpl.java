@@ -20,8 +20,8 @@ public class DeveloperDAOImpl implements DeveloperDAO {
 
 	@Override
 	public Developer findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Developer dev = em.find(Developer.class, id);
+		return dev;
 	}
 
 	@Override
