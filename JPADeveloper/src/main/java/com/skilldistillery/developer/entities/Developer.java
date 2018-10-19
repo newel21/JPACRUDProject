@@ -87,7 +87,10 @@ public class Developer {
 
 	@Override
 	public String toString() {
-		return "Developer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", category=" + category
+		return "Developer [id=" + id + 
+				", firstName=" + firstName + 
+				", lastName=" + lastName + 
+				", category=" + category
 				+ "]";
 	}
 	

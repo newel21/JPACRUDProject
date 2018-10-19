@@ -10,9 +10,9 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 
-<!-- VideoStore-servlet.xml -->
+<!-- Developer-servlet.xml -->
 
-<context:component-scan base-package="com.skilldistillery.mvcvideostore.controllers, com.skilldistillery.mvcvideostore.data" />
+<context:component-scan base-package="com.skilldistillery.developer.controllers, com.skilldistillery.developer.data" />
 
 <bean id="myEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
    <property name="persistenceUnitName" value="Developer" />

@@ -14,7 +14,7 @@
       <property name="javax.persistence.jdbc.url"
         value="jdbc:mysql://localhost:3306/developerdb?useSSL=false" />
       <property name="javax.persistence.jdbc.user"
-        value="developer"/>
+        value="developeruser"/>
       <property name="javax.persistence.jdbc.password"
         value="developer" />
       <property name="javax.persistence.jdbc.driver"
