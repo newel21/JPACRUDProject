@@ -15,26 +15,27 @@ import com.skilldistillery.developer.entities.Developer;
 
 @Controller
 public class DeveloperController {
-	
+
 	@Autowired
 	private DeveloperDAO devDAO;
-	
-	  @RequestMapping(path = "getData.do", method = RequestMethod.GET)
-	  public ModelAndView findById(@RequestParam("id") int id) {
-	    ModelAndView mv = new ModelAndView();
 
-	    Developer dev = devDAO.findById(id);     
+	@RequestMapping(path = "getData.do", method = RequestMethod.GET)
+	public ModelAndView findById(@RequestParam("id") int id) {
+		ModelAndView mv = new ModelAndView();
 
-	    mv.addObject("dev", dev);
-	    mv.setViewName("/WEB-INF/views/show.jsp");
-	    return mv;
-	  }
-	  
-	  @RequestMapping(path = "home.do", method = RequestMethod.GET)
-	  public String findAll(Model model) {
-		
+		Developer dev = devDAO.findById(id);
 
-	    return "/WEB-INF/index.jsp";
-	  }
+		mv.addObject("dev", dev);
+		mv.setViewName("/WEB-INF/views/show.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "home.do", method = RequestMethod.GET)
+	public String findAll(Model model) {
+		List<Developer> devs = devDAO.findAll();
+		model.addAttribute("devs", devs);
+
+		return "/WEB-INF/views/show.jsp";
+	}
 
 }

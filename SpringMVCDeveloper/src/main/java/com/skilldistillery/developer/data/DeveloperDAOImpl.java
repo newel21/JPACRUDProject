@@ -26,9 +26,12 @@ public class DeveloperDAOImpl implements DeveloperDAO {
 
 	@Override
 	public List<Developer> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String qStr = "SELECT devs from Developer devs";
+		List<Developer> devs = em.createQuery(qStr, Developer.class)
+				.getResultList();
+		return devs;
 	}
+	
 
 	@Override
 	public Developer add(Developer dev) {

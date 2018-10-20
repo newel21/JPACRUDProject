@@ -24,7 +24,11 @@ CREATE TABLE IF NOT EXISTS `developer` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
-  `category` VARCHAR(45) NULL DEFAULT NULL,
+  `gender` VARCHAR(10) NOT NULL,
+  `category` VARCHAR(45) NULL,
+  `learned_by` VARCHAR(45) NULL,
+  `school_attended` VARCHAR(45) NULL,
+  `favorite_language` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 3
@@ -46,7 +50,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `developerdb`;
-INSERT INTO `developer` (`id`, `first_name`, `last_name`, `category`) VALUES (2, 'something', 'whatever', 'green');
+INSERT INTO `developer` (`id`, `first_name`, `last_name`, `gender`, `category`, `learned_by`, `school_attended`, `favorite_language`) VALUES (1, 'Mark', 'Zuckerberg', 'Male', 'Wizard', 'self-taught', 'Harvard', 'Java');
+INSERT INTO `developer` (`id`, `first_name`, `last_name`, `gender`, `category`, `learned_by`, `school_attended`, `favorite_language`) VALUES (2 , 'Grace', 'Hpper', 'Female', 'Computer Scientist', 'University', 'Yale', 'COBOL');
+INSERT INTO `developer` (`id`, `first_name`, `last_name`, `gender`, `category`, `learned_by`, `school_attended`, `favorite_language`) VALUES (3, 'Fred', 'Fredette', 'Male', 'Mid-level', 'Coding Bootcamp', NULL, 'JavaScript');
 
 COMMIT;
 
