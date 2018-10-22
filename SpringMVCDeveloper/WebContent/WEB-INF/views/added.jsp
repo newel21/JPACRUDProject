@@ -6,8 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Added Developer</title>
+<style>
+	.wrapper{
+		margin: auto;
+		background: #eee;
+		display:grid;
+		border: solid;
+		padding: 5em;
+	}
+</style>
 </head>
 <body>
+	<div class="wrapper">
 	<form action="home.do">
 		<input type="submit" value="Home" />
 	</form>
@@ -21,5 +31,6 @@
 			<strong>Learned By: </strong>${dev.learnedBy} <br>
 			<strong>School Attended: </strong>${dev.schoolAttended} <br>
 			<strong>Favorite Language: </strong>${dev.favoriteLanguage} <br>		
+	</div>
 </body>
 </html>

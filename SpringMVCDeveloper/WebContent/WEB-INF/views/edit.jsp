@@ -5,8 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Update Developer</title>
+<style>
+	.wrapper{
+		margin: auto;
+		background: #eee;
+		display:grid;
+		border: solid;
+		padding: 5em;
+	}
+</style>
 </head>
 <body>
+	<div class="wrapper">
 	<form action="home.do">
 		<input type="submit" value="Home" />
 	</form>
@@ -26,5 +36,6 @@
 		<input type="submit" value="Update" />
 	</form>
 
+	</div>
 </body>
 </html>

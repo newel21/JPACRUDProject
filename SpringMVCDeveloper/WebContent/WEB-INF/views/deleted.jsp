@@ -6,13 +6,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Deleted Developer</title>
+<style>
+	.wrapper{
+		margin: auto;
+		background: #eee;
+		display:grid;
+		border: solid;
+		padding: 5em;
+	}
+</style>
 </head>
 <body>
+	<div class="wrapper">
 	<form action="home.do">
 		<input type="submit" value="Home" />
 	</form>
 	<p>
 	Developer has been deleted
 	</p>
+	</div>
 </body>
 </html>

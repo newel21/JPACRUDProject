@@ -93,7 +93,7 @@ public class DeveloperController {
 	}
 	
 	// deleted.jsp just prompts you a message that the developer
-	//has been deleted.
+	// has been deleted
 	@RequestMapping(path="deleteDev.do", method=RequestMethod.POST)
 	public ModelAndView deleteDevById(int id) {
 		ModelAndView mv = new ModelAndView();

@@ -6,10 +6,41 @@
 <meta charset="UTF-8">
 <title>Home Page</title>
 </head>
+<style>
+	.head {
+		text-align: center;
+	}
+	.container{
+		margin: 0 auto;
+		display:grid;
+		grid-template-columns: 1fr 2fr; 
+	}
+	.container > div{
+		background: #eee;
+		padding: 5em;
+		border: solid;
+	}
+	.container > div:nth-child(odd) {
+		background: #ddd;
+	}
+	.nested {
+		margin: 0 auto;
+		display:grid;
+	}
+	.other {
+		margin: 0 auto;
+		display: grid;
+	
+	}
+
+</style>
 <body>
-
+	<div class="head">
 	<h2>Developer Database</h2>
-
+	</div>
+	
+	<div class="container">
+	<div class="nested">
 	<h3>Search by ID</h3>
 	<form action="getData.do" method="GET">
 		ID: <input type="text" name="id" size=4 /> 
@@ -32,7 +63,8 @@
 	</form>
 	
 	 <br>
-	 
+	</div>
+	<div class="other">
 	<h3>Add Developer</h3>
 	<h4>Please provide the following details:</h4>
 	<form action="addDev.do" method="post">
@@ -46,6 +78,8 @@
 		<input type="submit" value="Add" />
 	</form>
 
+	</div>
+	</div>
 </body>
 </html>
 
