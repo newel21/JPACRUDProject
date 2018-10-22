@@ -8,8 +8,8 @@ public interface DeveloperDAO {
 	Developer findById(int id);
 	List<Developer> findAll();
 	Developer add(Developer dev);
-	Developer update(Developer dev);
-	boolean delete(Developer dev);
-	boolean deleteById(int devId);
+	Developer update(int id, Developer dev);
+//	boolean delete(Developer dev);
+	boolean deleteById(int id);
 
 }

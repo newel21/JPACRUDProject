@@ -40,9 +40,10 @@ class DeveloperTest {
 	@Test
 	void test_developer_mappings() {
 		Developer dev = em.find(Developer.class, 1);
+		assertEquals(1, dev.getId());
 		assertEquals("Mark", dev.getFirstName());
 		assertEquals("Zuckerberg", dev.getLastName());
-		assertEquals("M", dev.getGender());
+		assertEquals("Male", dev.getGender());
 		assertEquals("Wizard", dev.getCategory());
 		assertEquals("self-taught", dev.getLearnedBy());
 		assertEquals("Harvard", dev.getSchoolAttended());

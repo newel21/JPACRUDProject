@@ -35,26 +35,40 @@ public class DeveloperDAOImpl implements DeveloperDAO {
 
 	@Override
 	public Developer add(Developer dev) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(dev);
+		em.flush();
+		return dev;
 	}
 
+	
 	@Override
-	public Developer update(Developer dev) {
-		// TODO Auto-generated method stub
-		return null;
+	public Developer update(int id, Developer dev) {
+		Developer manageDev = em.find(Developer.class, id);
+		manageDev.setFirstName(dev.getFirstName());
+		manageDev.setLastName(dev.getLastName());
+		manageDev.setGender(dev.getGender());
+		manageDev.setCategory(dev.getCategory());
+		manageDev.setLearnedBy(dev.getLearnedBy());
+		manageDev.setSchoolAttended(dev.getSchoolAttended());
+		manageDev.setFavoriteLanguage(dev.getFavoriteLanguage());
+		return manageDev;
 	}
 
-	@Override
-	public boolean delete(Developer dev) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	@Override
+//	public boolean delete(Developer dev) {
+//		em.remove(dev);
+//		return true;
+//	}
 
 	@Override
-	public boolean deleteById(int devId) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteById(int id) {
+		Developer deleteDevId = em.find(Developer.class, id);
+		em.remove(deleteDevId);
+		if(deleteDevId != null) {
+			return false;
+		}
+		return true;
 	}
+
 
 }

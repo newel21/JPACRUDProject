@@ -5,37 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Developer Details</title>
+<title>Added Developer</title>
 </head>
 <body>
 	<form action="home.do">
 		<input type="submit" value="Home" />
 	</form>
+	
+	<h3>This developer has been added</h3>
 	<br>
-	<c:choose>
-
-		<c:when test="${! empty dev}">
-			<strong>ID: </strong>${dev.id}<br>
+			<strong>ID: </strong>${dev.id} <br>
 			<strong>Name: </strong>${dev.firstName} ${dev.lastName } <br>
 			<strong>Gender: </strong>${dev.gender} <br>
 			<strong>Category: </strong>${dev.category} <br>
 			<strong>Learned By: </strong>${dev.learnedBy} <br>
 			<strong>School Attended: </strong>${dev.schoolAttended} <br>
-			<strong>Favorite Language: </strong>${dev.favoriteLanguage} <br>
-			<form action="edit.do" method="POST">
-				<input type="hidden" name="id" value="${dev.id}">
-				<input type="submit" value="Edit" />
-			</form>
-			<form action="deleteDev.do" method="POST">
-				<input type="hidden" name="id" value="${dev.id}">
-				<input type="submit" value="Delete" />
-			</form>
-		</c:when>
-
-		<c:otherwise>
-			<p>NOT ON FILE</p>
-		</c:otherwise>
-
-	</c:choose>
+			<strong>Favorite Language: </strong>${dev.favoriteLanguage} <br>		
 </body>
 </html>
