@@ -50,8 +50,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `developerdb`;
-INSERT INTO `developer` (`id`, `first_name`, `last_name`, `gender`, `category`, `learned_by`, `school_attended`, `favorite_language`) VALUES (1, 'Mark', 'Zuckerberg', 'Male', 'Wizard', 'self-taught', 'Harvard', 'Java');
-INSERT INTO `developer` (`id`, `first_name`, `last_name`, `gender`, `category`, `learned_by`, `school_attended`, `favorite_language`) VALUES (2 , 'Grace', 'Hpper', 'Female', 'Computer Scientist', 'University', 'Yale', 'COBOL');
+INSERT INTO `developer` (`id`, `first_name`, `last_name`, `gender`, `category`, `learned_by`, `school_attended`, `favorite_language`) VALUES (1, 'Mark', 'Zuckerberg', 'Male', 'Expert', 'self-taught', 'Harvard', 'Java');
+INSERT INTO `developer` (`id`, `first_name`, `last_name`, `gender`, `category`, `learned_by`, `school_attended`, `favorite_language`) VALUES (2 , 'Grace', 'Hpper', 'Female', 'Expert', 'University', 'Yale', 'COBOL');
 INSERT INTO `developer` (`id`, `first_name`, `last_name`, `gender`, `category`, `learned_by`, `school_attended`, `favorite_language`) VALUES (3, 'Fred', 'Fredette', 'Male', 'Mid-level', 'Coding Bootcamp', NULL, 'JavaScript');
 
 COMMIT;

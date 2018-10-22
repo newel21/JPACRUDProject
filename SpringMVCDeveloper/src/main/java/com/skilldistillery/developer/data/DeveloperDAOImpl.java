@@ -1,13 +1,10 @@
 package com.skilldistillery.developer.data;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-
 import org.springframework.stereotype.Repository;
-
 import com.skilldistillery.developer.entities.Developer;
 
 @Transactional
@@ -32,7 +29,6 @@ public class DeveloperDAOImpl implements DeveloperDAO {
 		return devs;
 	}
 	
-
 	@Override
 	public Developer add(Developer dev) {
 		em.persist(dev);
@@ -43,15 +39,15 @@ public class DeveloperDAOImpl implements DeveloperDAO {
 	
 	@Override
 	public Developer update(int id, Developer dev) {
-		Developer manageDev = em.find(Developer.class, id);
-		manageDev.setFirstName(dev.getFirstName());
-		manageDev.setLastName(dev.getLastName());
-		manageDev.setGender(dev.getGender());
-		manageDev.setCategory(dev.getCategory());
-		manageDev.setLearnedBy(dev.getLearnedBy());
-		manageDev.setSchoolAttended(dev.getSchoolAttended());
-		manageDev.setFavoriteLanguage(dev.getFavoriteLanguage());
-		return manageDev;
+		Developer managedDev = em.find(Developer.class, id);
+		managedDev.setFirstName(dev.getFirstName());
+		managedDev.setLastName(dev.getLastName());
+		managedDev.setGender(dev.getGender());
+		managedDev.setCategory(dev.getCategory());
+		managedDev.setLearnedBy(dev.getLearnedBy());
+		managedDev.setSchoolAttended(dev.getSchoolAttended());
+		managedDev.setFavoriteLanguage(dev.getFavoriteLanguage());
+		return managedDev;
 	}
 
 //	@Override

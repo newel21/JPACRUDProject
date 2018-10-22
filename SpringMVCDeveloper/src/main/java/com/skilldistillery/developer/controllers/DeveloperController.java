@@ -19,6 +19,7 @@ public class DeveloperController {
 	@Autowired
 	private DeveloperDAO devDAO;
 	
+	// All actions that requests home.do will be directed to the home page
 	@RequestMapping(path= "home.do", method = RequestMethod.GET)
 	public ModelAndView homePage() {
 		ModelAndView mv = new ModelAndView();
@@ -26,7 +27,9 @@ public class DeveloperController {
 		return mv;
 		
 	}
-
+	
+	// this shows the developer's details individually. Every getData.do request
+	// will be directed to the show.jsp
 	@RequestMapping(path = "getData.do", method = RequestMethod.GET)
 	public ModelAndView findById(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
@@ -37,7 +40,9 @@ public class DeveloperController {
 		mv.setViewName("/WEB-INF/views/show.jsp");
 		return mv;
 	}
-
+	
+	// devs.jsp will show you a list of developers on file in a form 
+	// of hyperlinks
 	@RequestMapping(path = "listDevs.do", method = RequestMethod.GET)
 	public String findAll(Model model) {
 		List<Developer> devs = devDAO.findAll();
@@ -46,8 +51,9 @@ public class DeveloperController {
 		return "/WEB-INF/views/devs.jsp";
 	}
 	
+	// added.jsp will show you the details of the newly added developer
 	@RequestMapping(path="addDev.do", method=RequestMethod.POST)
-	public ModelAndView add(Developer dev, Model model) {
+	public ModelAndView addDev(Developer dev, Model model) {
 		ModelAndView mv = new ModelAndView(); 
 		Developer addDev = devDAO.add(dev); 
 		mv.addObject("dev", addDev); 
@@ -55,8 +61,10 @@ public class DeveloperController {
 		return mv; 
 	}
 	
+	// edit.jsp will prompt you to a page where you can enter the 
+	// changes you want for a developer
 	@RequestMapping(path="edit.do", method=RequestMethod.POST)
-	public ModelAndView edit(int id) {
+	public ModelAndView editDev(int id) {
 		ModelAndView mv = new ModelAndView();
 		Developer editDev = devDAO.findById(id);
 		mv.addObject("dev", editDev);
@@ -64,17 +72,30 @@ public class DeveloperController {
 		return mv;
 	}
 	
+	// once the change has been done, it will prompt you to a 
+	// show.jsp which is basically the developer's information
 	@RequestMapping(path="update.do", method=RequestMethod.POST)
-	public ModelAndView update(Developer dev) {
+	public ModelAndView updateDev(Developer dev) {
 		ModelAndView mv = new ModelAndView();
-		Developer updateDev = devDAO.update(dev.getId(), dev);
+		Developer updateDev = new Developer(); 
+		//int id = dev.getId();
+		//updateDev = devDAO.update(id, dev);
+		
+		/**
+		 * I could't figure out how to make the ID
+		 * in the devDAO.update parameter to be dynamic
+		 * so I hard coded number 1 for testing purposes 
+		 **/
+		updateDev = devDAO.update(1, dev);
 		mv.addObject("dev", updateDev);
 		mv.setViewName("/WEB-INF/views/show.jsp");
 		return mv;
 	}
 	
+	// deleted.jsp just prompts you a message that the developer
+	//has been deleted.
 	@RequestMapping(path="deleteDev.do", method=RequestMethod.POST)
-	public ModelAndView deleteById(int id) {
+	public ModelAndView deleteDevById(int id) {
 		ModelAndView mv = new ModelAndView();
 		devDAO.deleteById(id);
 		mv.setViewName("/WEB-INF/views/deleted.jsp");

@@ -28,6 +28,8 @@ public class Developer {
 	@Column(name="favorite_language")
 	private String favoriteLanguage;
 
+	
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -163,9 +165,10 @@ public class Developer {
 		
 	}
 
-	public Developer(String firstName, String lastName, String gender, String category, String learnedBy,
+	public Developer(int id, String firstName, String lastName, String gender, String category, String learnedBy,
 			String schoolAttended, String favoriteLanguage) {
 		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
