@@ -23,8 +23,8 @@
 	
 	<br>
 	 
-	<h3>Add Developer</h3>
-	<h4>Please provide the following details:</h4>
+	<h3>Update Developer</h3>
+	<h4>Please provide the following details:  with id = ${dev.id }</h4>
 	<form action="update.do" method="post">
 		<label for="firstName">First Name: </label> <input type="text" name="firstName" value="${dev.firstName }"/><br>
 		<label for="lastName">Last Name: </label> <input type="text" name="lastName" value="${dev.lastName }" /><br>
@@ -33,6 +33,7 @@
 		<label for="learnedBy">Learned By: </label> <input type="text" name="learnedBy" value="${dev.learnedBy }"/>(Self-taught, Coding Bootcamp, University)<br>
 		<label for="schoolAttended">School Attended: </label> <input type="text" name="schoolAttended" value="${dev.schoolAttended }"/><br>
 		<label for="favoriteLanguage">Favorite Language:</label> <input type="text" name="favoriteLanguage" value="${dev.favoriteLanguage }"/>(Java, Python, JavaScript, Other)<br>	
+		<input type="hidden" value="${dev.id }" name="id"/>
 		<input type="submit" value="Update" />
 	</form>
 

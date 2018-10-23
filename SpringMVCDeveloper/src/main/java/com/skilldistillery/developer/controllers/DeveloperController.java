@@ -75,18 +75,10 @@ public class DeveloperController {
 	// once the change has been done, it will prompt you to a 
 	// show.jsp which is basically the developer's information
 	@RequestMapping(path="update.do", method=RequestMethod.POST)
-	public ModelAndView updateDev(Developer dev) {
+	public ModelAndView updateDev(@RequestParam("id") int id, Developer dev) {
 		ModelAndView mv = new ModelAndView();
-		Developer updateDev = new Developer(); 
-		//int id = dev.getId();
-		//updateDev = devDAO.update(id, dev);
 		
-		/**
-		 * I could't figure out how to make the ID
-		 * in the devDAO.update parameter to be dynamic
-		 * so I hard coded number 1 for testing purposes 
-		 **/
-		updateDev = devDAO.update(1, dev);
+		Developer updateDev = devDAO.update(id, dev);
 		mv.addObject("dev", updateDev);
 		mv.setViewName("/WEB-INF/views/show.jsp");
 		return mv;
